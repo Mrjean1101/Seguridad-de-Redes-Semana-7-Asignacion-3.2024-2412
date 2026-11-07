@@ -1,0 +1,14 @@
+enable
+configure terminal
+interface Ethernet2/0
+ip address 10.24.12.1 255.255.255.0
+no shutdown
+exit
+ip dhcp excluded-address 10.24.12.1 10.24.12.10
+ip dhcp pool POOL_LAN_ZABBIX
+network 10.24.12.0 255.255.255.0
+default-router 10.24.12.1
+exit
+snmp-server community Zabbix2412 RO
+exit
+write memory

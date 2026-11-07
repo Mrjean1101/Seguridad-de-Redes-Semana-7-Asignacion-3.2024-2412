@@ -1,0 +1,10 @@
+enable
+configure terminal
+interface Vlan1
+ip address 10.24.12.2 255.255.255.0
+no shutdown
+exit
+ip default-gateway 10.24.12.1
+snmp-server community Zabbix2412 RO
+exit
+write memory
